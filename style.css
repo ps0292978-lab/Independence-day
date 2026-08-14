@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* =========================
+   MAIN BODY
+========================= */
+
+body {
+  background: #020617;
+  color: white;
+}
+
+/* =========================
+   ALL PAGES
+========================= */
+
+.page {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: scale(1.08);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease,
+    visibility 1s;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* =========================
+   PAGE BACKGROUNDS
+========================= */
+
+#page1 {
+  background:
+    radial-gradient(circle at 50% 20%, #ff9933 0%, transparent 30%),
+    linear-gradient(
+      180deg,
+      #ff9933 0%,
+      #ff9933 33%,
+      #ffffff 33%,
+      #ffffff 66%,
+      #138808 66%,
+      #138808 100%
+    );
+}
+
+#page2 {
+  background:
+    radial-gradient(circle, rgba(255,153,51,.3), transparent 45%),
+    linear-gradient(135deg, #071952, #001b3d, #063b1d);
+}
+
+#page3 {
+  background:
+    radial-gradient(circle at top, #ff9933, transparent 35%),
+    linear-gradient(160deg, #101828, #3b102e);
+}
+
+#page4 {
+  background:
+    radial-gradient(circle, rgba(255,105,180,.25), transparent 40%),
+    linear-gradient(145deg, #12001f, #001b36);
+}
+
+#page5 {
+  background:
+    linear-gradient(
+      180deg,
+      #ff9933 0%,
+      #ff9933 33%,
+      #ffffff 33%,
+      #ffffff 66%,
+      #138808 66%,
+      #138808 100%
+    );
+  color: #111;
+}
+
+#page6 {
+  background:
+    radial-gradient(circle at center, #4a102d, transparent 55%),
+    linear-gradient(135deg, #08000d, #22001b);
+}
+
+#page7 {
+  background:
+    radial-gradient(circle at center, #ff9933, transparent 25%),
+    radial-gradient(circle at bottom, #138808, transparent 35%),
+    #020617;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  width: 90%;
+  max-width: 650px;
+
+  padding: 30px 20px;
+
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+  font-size: clamp(30px, 8vw, 60px);
+  font-weight: 800;
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,.5),
+    0 0 25px rgba(255,153,51,.4);
+}
+
+h2 {
+  font-size: clamp(20px, 5vw, 34px);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: clamp(15px, 4vw, 20px);
+  line-height: 1.8;
+  margin: 20px auto;
+  max-width: 550px;
+}
+
+/* =========================
+   EMOJIS
+========================= */
+
+.flag-emoji {
+  font-size: 90px;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.big-emoji {
+  font-size: 100px;
+  margin-bottom: 20px;
+
+  animation: floating 3s ease-in-out infinite;
+}
+
+.flower {
+  font-size: 90px;
+
+  animation:
+    floating 2.5s ease-in-out infinite,
+    rotateFlower 5s linear infinite;
+}
+
+.heart,
+.love-heart {
+  font-size: 100px;
+
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.chakra {
+  font-size: 90px;
+
+  animation: spin 8s linear infinite;
+}
+
+.firework {
+  font-size: 100px;
+
+  animation: firework 1.8s ease-in-out infinite;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  border: none;
+  outline: none;
+
+  padding: 14px 28px;
+
+  margin-top: 25px;
+
+  border-radius: 50px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #111;
+
+  background: linear-gradient(
+    90deg,
+    #ff9933,
+    #ffffff,
+    #138808
+  );
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(255,255,255,.5),
+    0 0 25px rgba(255,153,51,.35);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,.8),
+    0 0 40px rgba(255,153,51,.6);
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+/* =========================
+   TRICOLOR LINE
+========================= */
+
+.tricolor-line {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #ff9933 33%,
+    #ffffff 33%,
+    #ffffff 66%,
+    #138808 66%
+  );
+
+  box-shadow: 0 0 15px rgba(255,255,255,.7);
+}
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+  margin-top: 25px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  font-weight: 600;
+
+  color: #ffd9a8;
+
+  text-shadow: 0 0 10px rgba(255,153,51,.7);
+}
+
+.flag-bottom {
+  margin-top: 25px;
+  font-size: 35px;
+
+  letter-spacing: 8px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floating {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+}
+
+@keyframes heartbeat {
+
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.15);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes rotateFlower {
+
+  from {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  to {
+    transform: rotate(-5deg);
+  }
+
+}
+
+@keyframes firework {
+
+  0% {
+    transform: scale(.8);
+    opacity: .5;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(.8);
+    opacity: .5;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  button {
+    padding: 13px 25px;
+  }
+
+  .flag-emoji,
+  .big-emoji,
+  .flower,
+  .chakra {
+    font-size: 75px;
+  }
+
+  .heart,
+  .love-heart,
+  .firework {
+    font-size: 80px;
+  }
+
+}
